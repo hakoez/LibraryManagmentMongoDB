@@ -51,7 +51,8 @@ namespace LibraryManagment
                         if (currentUser.Id == "admin" && currentUser.Password == "admin")
                         {
                             Console.WriteLine("Entering Admin panel...");
-                            managment.AdminMenu();
+                            Admin admin = new Admin(managment);
+                            admin.AdminMenu();
                             continue;
                         }
                         Console.WriteLine("Login Succesfully");
