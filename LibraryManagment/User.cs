@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagment
 {
-    class User
+    class User:Entity
     {
         public string Password {  get; set; }
 
@@ -29,7 +29,7 @@ namespace LibraryManagment
         }
        
         //Kullanici bilgileri icin metot
-        public void DisplayInfo()
+        public override void DisplayInfo()
         {
             Console.WriteLine($"User Id: {Id}" );
             Console.WriteLine($"User Name: {Name}");

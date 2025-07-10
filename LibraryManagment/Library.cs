@@ -76,7 +76,8 @@ namespace LibraryManagment
                 string choice = Console.ReadLine();
                 if (choice == "1")
                 {
-                    user.DisplayInfo();
+                    Entity entity = user;
+                    entity.DisplayInfo();
                 }
                 else if (choice == "2")
                 {
@@ -183,9 +184,11 @@ namespace LibraryManagment
         //Kitaplari listelemek 
         public void ShowBooks()
         {
+            Console.WriteLine("=====BOOKS=====");
             foreach(var book in books)
             {
-                Console.WriteLine($"Title:{book.Title}, Author:{book.Author}, ISBN:{book.ISBN}, Genre:{book.Genre}, Stock:{book.Stock}");
+                Entity entity = book;
+                entity.DisplayInfo();
             }
         }
 
@@ -289,7 +292,7 @@ namespace LibraryManagment
             string choice = Console.ReadLine();
 
             Console.WriteLine("Search keyword: ");
-            string keyword = Console.ReadLine();
+            string keyword = Console.ReadLine().ToLower();
 
             List<Book> results = new List<Book>();
 

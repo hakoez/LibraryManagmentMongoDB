@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagment
 {
-    class Book
+    class Book:Entity
     {
         public string Title { get; set; }
         public string Author { get; set; }
@@ -23,14 +23,9 @@ namespace LibraryManagment
             Stock = stock;
         }
         //kitap bilgileri icin metot
-        public void DisplayInfo()
+        public override void DisplayInfo()
         {
-            Console.WriteLine("Book Informations: ");
-            Console.WriteLine($"Title: {Title}");
-            Console.WriteLine($"Author: {Author}");
-            Console.WriteLine($"ISBN: {ISBN}");
-            Console.WriteLine($"Genre: {Genre}");
-            Console.WriteLine($"Stock: {Stock}");
+            Console.WriteLine($"Title:{Title}, Author:{Author}, ISBN:{ISBN}, Genre:{Genre}, Stock:{Stock}");
         }
     }
 }
