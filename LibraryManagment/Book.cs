@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace LibraryManagment
 {
-    class Book:Entity
+    [BsonIgnoreExtraElements]//_id gerek olmadigi icin ignorlama
+
+    public class Book:Entity
     {
         public string Title { get; set; }
         public string Author { get; set; }

@@ -7,8 +7,13 @@ namespace LibraryManagment
     {
         static void Main(string[] args)
         {
-            Library managment = new Library();
+
+            MongoService mongoService = new MongoService();
+            User.SetMongoCollection(mongoService.GetUserCollection());//user koleksiyonunu _userCollectiona atama
+            Library managment = new Library(mongoService);
             User currentUser = null;
+
+
 
             while (true)
             {
