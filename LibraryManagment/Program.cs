@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Serializers;
 
 namespace LibraryManagment
 {
@@ -33,9 +34,17 @@ namespace LibraryManagment
                     Console.Write("Enter ID: ");
                     newUser.Id = Console.ReadLine();
 
-                    Console.Write("Enter password: ");
-                    newUser.Password = Console.ReadLine();
-
+                    Console.Write("Enter password(min 6 max 14 characters): ");
+                    string pass = Console.ReadLine();
+                    if (pass.Length < 6 || pass.Length > 14)
+                    {
+                        Console.WriteLine("Please enter your password between 6-14 characters.");
+                        continue;
+                    }
+                    else
+                    {
+                        newUser.Password = pass;
+                    }
                     Console.Write("Enter email: ");
                     newUser.Mail = Console.ReadLine();
 
